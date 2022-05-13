@@ -1,837 +1,181 @@
 <!DOCTYPE html>
 
-<html lang="en">
-  <head>
-    <title>MyOwnDoctor Care Navigator</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<html lang="en" style="box-sizing: border-box;border-width: 0;border-style: solid;line-height: 1.15;font-family: Inter;font-size: 16px;">
+  <head style="box-sizing: border-box;border-width: 0;border-style: solid;">
+    <title style="box-sizing: border-box;border-width: 0;border-style: solid;">MyOwnDoctor Care Navigator</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" style="box-sizing: border-box;border-width: 0;border-style: solid;">
+    <meta property="twitter:card" content="summary_large_image" style="box-sizing: border-box;border-width: 0;border-style: solid;">
+    <meta charset="utf-8" style="box-sizing: border-box;border-width: 0;border-style: solid;">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" style="box-sizing: border-box;border-width: 0;border-style: solid;">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta charset="utf-8" />
-    <meta property="twitter:card" content="summary_large_image" />
-    <style>
-      html {  line-height: 1.15;}body {  margin: 0;}* {  box-sizing: border-box;  border-width: 0;  border-style: solid;}p,li,ul,pre,div,h1,h2,h3,h4,h5,h6 {  margin: 0;  padding: 0;}button,input,optgroup,select,textarea {  font-family: inherit;  font-size: 100%;  line-height: 1.15;  margin: 0;}button,select {  text-transform: none;}button,[type="button"],[type="reset"],[type="submit"] {  -webkit-appearance: button;}button::-moz-focus-inner,[type="button"]::-moz-focus-inner,[type="reset"]::-moz-focus-inner,[type="submit"]::-moz-focus-inner {  border-style: none;  padding: 0;}button:-moz-focus,[type="button"]:-moz-focus,[type="reset"]:-moz-focus,[type="submit"]:-moz-focus {  outline: 1px dotted ButtonText;}a {  color: inherit;  text-decoration: inherit;}input {  padding: 2px 4px;}img {  display: block;}
-    </style>
-    <style>
-      html {
-        font-family: Inter;
-        font-size: 16px;
-        
-      }
-
-      body {
-        font-weight: 400;
-        font-style:normal;
-        text-decoration: none;
-        text-transform: none;
-        letter-spacing: normal;
-        line-height: 1.15;
-        color: var(--dl-color-gray-black);
-        background-color: var(--dl-color-gray-white);
-      }
-    </style>
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-    />
-    <style>
-      :root {
-        --dl-color-gray-500: #595959;
-        --dl-color-gray-700: #999999;
-        --dl-color-gray-900: #D9D9D9;
-        --dl-size-size-large: 144px;
-        --dl-size-size-small: 48px;
-        --dl-color-danger-300: #A22020;
-        --dl-color-danger-500: #BF2626;
-        --dl-color-danger-700: #E14747;
-        --dl-color-gray-black: #000000;
-        --dl-color-gray-white: #FFFFFF;
-        --dl-size-size-medium: 96px;
-        --dl-size-size-xlarge: 192px;
-        --dl-size-size-xsmall: 16px;
-        --dl-space-space-unit: 16px;
-        --dl-color-primary-100: #003EB3;
-        --dl-color-primary-300: #0074F0;
-        --dl-color-primary-500: #14A9FF;
-        --dl-color-primary-700: #85DCFF;
-        --dl-color-success-300: #199033;
-        --dl-color-success-500: #32A94C;
-        --dl-color-success-700: #4CC366;
-        --dl-size-size-xxlarge: 288px;
-        --dl-size-size-maxwidth: 1400px;
-        --dl-radius-radius-round: 50%;
-        --dl-space-space-halfunit: 8px;
-        --dl-space-space-sixunits: 96px;
-        --dl-space-space-twounits: 32px;
-        --dl-radius-radius-radius2: 2px;
-        --dl-radius-radius-radius4: 4px;
-        --dl-radius-radius-radius8: 8px;
-        --dl-space-space-fiveunits: 80px;
-        --dl-space-space-fourunits: 64px;
-        --dl-space-space-threeunits: 48px;
-        --dl-space-space-oneandhalfunits: 24px;
-      }
-      .button {
-        color: var(--dl-color-gray-black);
-        display: inline-block;
-        padding: 0.5rem 1rem;
-        border-color: var(--dl-color-gray-black);
-        border-width: 1px;
-        border-radius: 4px;
-        background-color: var(--dl-color-gray-white);
-      }
-      .input {
-        color: var(--dl-color-gray-black);
-        cursor: auto;
-        padding: 0.5rem 1rem;
-        border-color: var(--dl-color-gray-black);
-        border-width: 1px;
-        border-radius: 4px;
-        background-color: var(--dl-color-gray-white);
-      }
-      .textarea {
-        color: var(--dl-color-gray-black);
-        cursor: auto;
-        padding: 0.5rem;
-        border-color: var(--dl-color-gray-black);
-        border-width: 1px;
-        border-radius: 4px;
-        background-color: var(--dl-color-gray-white);
-      }
-      .list {
-        width: 100%;
-        margin: 1em 0px 1em 0px;
-        display: block;
-        padding: 0px 0px 0px 1.5rem;
-        list-style-type: none;
-        list-style-position: outside;
-      }
-      .list-item {
-        display: list-item;
-      }
-      .teleport-show {
-        display: flex !important;
-      }
-      .content {
-        font-size: 16px;
-        font-family: Inter;
-        font-weight: 400;
-        line-height: 1.15;
-        text-transform: none;
-        text-decoration: none;
-      }
-      .heading {
-        font-size: 32px;
-        font-family: Inter;
-        font-weight: 700;
-        line-height: 1.15;
-        text-transform: none;
-        text-decoration: none;
-      }
-
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" style="box-sizing: border-box;border-width: 0;border-style: solid;">
+    <meta charset="utf-8" style="box-sizing: border-box;border-width: 0;border-style: solid;">
+    <meta property="twitter:card" content="summary_large_image" style="box-sizing: border-box;border-width: 0;border-style: solid;">
+    
+    
+    
+    
+    
+    
   </head>
-  <body>
-    <div>
-      <style>
-        .mesadetrabajo114174-container {
-          min-height: 100vh;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          background-color:#e5e5e5;
-        }
-        .mesadetrabajo114174-mesadetrabajo114174 {
-          width: 750px;
-          height: 2829px;
-          display: flex;
-          overflow: hidden;
-          position: relative;
-          max-width: 750px;
-          box-sizing: border-box;
-          align-items: flex-start;
-          border-color: transparent;
-        }
-        .mesadetrabajo114174-svg {
-          left: 0.0029296875px;
-          width: 750;
-          height: 2829;
-          position: absolute;
-        }
-        .mesadetrabajo114174-grupo24177 {
-          top: -46px;
-          left: -388px;
-          width: 1797px;
-          height: 876.2479858398438px;
-          display: flex;
-          position: absolute;
-          box-sizing: border-box;
-          align-items: flex-start;
-          flex-shrink: 1;
-          border-color: transparent;
-        }
-        .mesadetrabajo114174-grupo14178 {
-          top: 0px;
-          left: 0px;
-          width: 1797px;
-          height: 876.2479858398438px;
-          display: flex;
-          position: absolute;
-          box-sizing: border-box;
-          align-items: flex-start;
-          flex-shrink: 1;
-          border-color: transparent;
-        }
-        .mesadetrabajo114174-image {
-          top: 0px;
-          left: 0px;
-          width: 1797px;
-          height: 876px;
-          position: absolute;
-          object-fit: cover;
-          border-color: transparent;
-        }
-        .mesadetrabajo114174-svg1 {
-          top: 829px;
-          left: -0.9970703125px;
-          width: 751;
-          height: 2000;
-          position: absolute;
-        }
-        .mesadetrabajo114174-svg2 {
-          top: 539px;
-          left: 109.5029296875px;
-          width: 531;
-          height: 54;
-          position: absolute;
-        }
-        .mesadetrabajo114174-image1 {
-          top: 23px;
-          left: 212px;
-          width: 326px;
-          height: 109px;
-          position: absolute;
-          object-fit: cover;
-          border-color: transparent;
-        }
-        .mesadetrabajo114174-svg3 {
-          top: 771px;
-          left: 47px;
-          width: 655;
-          height: 1608;
-          position: absolute;
-        }
-        .mesadetrabajo114174-svg4 {
-          top: 2012px;
-          left: 169px;
-          width: 412;
-          height: 106;
-          position: absolute;
-        }
-        .mesadetrabajo114174-text {
-          top: 2037px;
-          left: 255px;
-          color: rgba(12, 0, 183, 1);
-          height: auto;
-          position: absolute;
-          font-size: 25px;
-          align-self: auto;
-          font-style: normal;
-          text-align: left;
-          font-family: Kanit;
-          font-weight: 600px;
-          line-height: 28px;
-          font-stretch: normal;
-          text-decoration: none;
-        }
-        .mesadetrabajo114174-text04 {
-          top: 2154.658203125px;
-          left: 240.24609375px;
-          color: rgba(255, 255, 255, 1);
-          height: auto;
-          position: absolute;
-          font-size: 25px;
-          align-self: auto;
-          font-style: normal;
-          text-align: left;
-          font-family: Kanit;
-          font-weight: 400px;
-          line-height: normal;
-          font-stretch: normal;
-          text-decoration: none;
-        }
-        .mesadetrabajo114174-grupo44190 {
-          top: 1756px;
-          left: -171px;
-          width: 1091px;
-          height: 325.7380065917969px;
-          display: flex;
-          position: absolute;
-          box-sizing: border-box;
-          align-items: flex-start;
-          flex-shrink: 1;
-          border-color: transparent;
-        }
-        .mesadetrabajo114174-image2 {
-          top: 0px;
-          left: 0px;
-          width: 1091px;
-          height: 326px;
-          position: absolute;
-          object-fit: cover;
-          border-color: transparent;
-        }
-        .mesadetrabajo114174-text05 {
-          top: 2612.6220703125px;
-          left: 110px;
-          color: rgba(255, 255, 255, 1);
-          height: auto;
-          position: absolute;
-          font-size: 25px;
-          align-self: auto;
-          font-style: normal;
-          text-align: center;
-          font-family: Kanit;
-          font-weight: 500px;
-          line-height: normal;
-          font-stretch: normal;
-          text-decoration: none;
-        }
-        .mesadetrabajo114174-text09 {
-          top: 2711.677734375px;
-          left: 140px;
-          color: rgba(255, 255, 255, 1);
-          height: auto;
-          position: absolute;
-          font-size: 25px;
-          align-self: auto;
-          font-style: normal;
-          text-align: left;
-          font-family: Kanit;
-          font-weight: 400px;
-          line-height: normal;
-          font-stretch: normal;
-          text-decoration: none;
-        }
-        .mesadetrabajo114174-text10 {
-          top: 2413.88671875px;
-          left: 290px;
-          color: rgba(255, 255, 255, 1);
-          height: auto;
-          position: absolute;
-          font-size: 25px;
-          align-self: auto;
-          font-style: normal;
-          text-align: left;
-          font-family: Kanit;
-          font-weight: 500px;
-          line-height: normal;
-          font-stretch: normal;
-          text-decoration: none;
-        }
-        .mesadetrabajo114174-image3 {
-          top: 2477px;
-          left: 181px;
-          width: 389px;
-          height: 93px;
-          position: absolute;
-          object-fit: cover;
-          border-color: transparent;
-        }
-        .mesadetrabajo114174-image4 {
-          top: 2503.47998046875px;
-          left: 356.02392578125px;
-          width: 39px;
-          height: 39px;
-          position: absolute;
-          object-fit: cover;
-          border-color: transparent;
-        }
-        .mesadetrabajo114174-image5 {
-          top: 2501.806640625px;
-          left: 497.734130859375px;
-          width: 55px;
-          height: 45px;
-          position: absolute;
-          object-fit: cover;
-          border-color: transparent;
-        }
-        .mesadetrabajo114174-svg05 {
-          top: 2499.623046875px;
-          left: 212.049072265625px;
-          width: 37;
-          height: 72;
-          position: absolute;
-        }
-        .mesadetrabajo114174-svg5 {
-          top: 2138.93505859375px;
-          left: 168px;
-          width: 413;
-          height: 60;
-          position: absolute;
-        }
-        .mesadetrabajo114174-svg6 {
-          top: 596.6708984375px;
-          left: 132px;
-          width: 487;
-          height: 54;
-          position: absolute;
-        }
-        .mesadetrabajo114174-svg7 {
-          top: 653.587890625px;
-          left: 110px;
-          width: 531;
-          height: 54;
-          position: absolute;
-        }
-        .mesadetrabajo114174-text11 {
-          top: 576px;
-          left: 149px;
-          color: rgba(255, 255, 255, 1);
-          height: auto;
-          position: absolute;
-          font-size: 55.529998779296875px;
-          align-self: auto;
-          font-style: normal;
-          text-align: left;
-          font-family: Kanit;
-          font-weight: 400px;
-          line-height: normal;
-          font-stretch: normal;
-          text-decoration: none;
-        }
-        .mesadetrabajo114174-text12 {
-          top: 634px;
-          left: 128px;
-          color: rgba(255, 255, 255, 1);
-          height: auto;
-          position: absolute;
-          font-size: 55.529998779296875px;
-          align-self: auto;
-          font-style: normal;
-          text-align: left;
-          font-family: Kanit;
-          font-weight: 400px;
-          line-height: normal;
-          font-stretch: normal;
-          text-decoration: none;
-        }
-        .mesadetrabajo114174-text13 {
-          top: 518.80615234375px;
-          left: 119px;
-          color: rgba(255, 255, 255, 1);
-          height: auto;
-          position: absolute;
-          font-size: 55.529998779296875px;
-          align-self: auto;
-          font-style: normal;
-          text-align: left;
-          font-family: Kanit;
-          font-weight: 400px;
-          line-height: normal;
-          font-stretch: normal;
-          text-decoration: none;
-        }
-        .mesadetrabajo114174-svg8 {
-          top: 2220px;
-          left: 169px;
-          width: 412;
-          height: 106;
-          position: absolute;
-        }
-        .mesadetrabajo114174-text14 {
-          top: 839px;
-          left: 124px;
-          color: rgba(0, 0, 0, 1);
-          width: 502px;
-          height: auto;
-          position: absolute;
-          font-size: 24px;
-          align-self: auto;
-          font-style: normal;
-          text-align: left;
-          font-family: Work Sans;
-          font-weight: 400px;
-          line-height: normal;
-          font-stretch: normal;
-          text-decoration: none;
-        }
-        .mesadetrabajo114174-text15 {
-          color: rgba(0, 0, 0, 1);
-          width: 502px;
-          height: auto;
-          align-self: auto;
-          font-style: normal;
-          text-align: left;
-          font-weight: 400px;
-          font-stretch: normal;
-          text-decoration: none;
-        }
-        .mesadetrabajo114174-text47 {
-          color: rgba(0, 0, 0, 1);
-          width: 502px;
-          height: auto;
-          align-self: auto;
-          font-style: normal;
-          text-align: left;
-          font-weight: 600px;
-          font-stretch: normal;
-          text-decoration: none;
-        }
-        .mesadetrabajo114174-text53 {
-          color: rgba(0, 0, 0, 1);
-          width: 502px;
-          height: auto;
-          align-self: auto;
-          font-style: normal;
-          text-align: left;
-          font-weight: 400px;
-          font-stretch: normal;
-          text-decoration: none;
-        }
-        .mesadetrabajo114174-text57 {
-          color: rgba(168, 30, 0, 1);
-          width: 502px;
-          height: auto;
-          align-self: auto;
-          font-style: normal;
-          text-align: left;
-          font-weight: 600px;
-          font-stretch: normal;
-          text-decoration: underline;
-        }
-        .mesadetrabajo114174-text58 {
-          color: rgba(0, 0, 0, 1);
-          width: 502px;
-          height: auto;
-          align-self: auto;
-          font-style: normal;
-          text-align: left;
-          font-weight: 600px;
-          font-stretch: normal;
-          text-decoration: none;
-        }
-        .mesadetrabajo114174-text59 {
-          color: rgba(0, 0, 0, 1);
-          width: 502px;
-          height: auto;
-          align-self: auto;
-          font-style: normal;
-          text-align: left;
-          font-weight: 400px;
-          font-stretch: normal;
-          text-decoration: none;
-        }
-        .mesadetrabajo114174-text63 {
-          color: rgba(0, 0, 0, 1);
-          width: 502px;
-          height: auto;
-          align-self: auto;
-          font-style: normal;
-          text-align: left;
-          font-weight: 600px;
-          font-stretch: normal;
-          text-decoration: none;
-        }
-        .mesadetrabajo114174-text64 {
-          color: rgba(0, 0, 0, 1);
-          width: 502px;
-          height: auto;
-          align-self: auto;
-          font-style: normal;
-          text-align: left;
-          font-weight: 400px;
-          font-stretch: normal;
-          text-decoration: none;
-        }
-        .mesadetrabajo114174-text65 {
-          color: rgba(168, 30, 0, 1);
-          width: 502px;
-          height: auto;
-          align-self: auto;
-          font-style: normal;
-          text-align: left;
-          font-weight: 600px;
-          font-stretch: normal;
-          text-decoration: underline;
-        }
-        .mesadetrabajo114174-text69 {
-          color: rgba(0, 0, 0, 1);
-          width: 502px;
-          height: auto;
-          align-self: auto;
-          font-style: normal;
-          text-align: left;
-          font-weight: 600px;
-          font-stretch: normal;
-          text-decoration: none;
-        }
-        .mesadetrabajo114174-text70 {
-          color: rgba(0, 0, 0, 1);
-          width: 502px;
-          height: auto;
-          align-self: auto;
-          font-style: normal;
-          text-align: left;
-          font-weight: 400px;
-          font-stretch: normal;
-          text-decoration: none;
-        }
-        .mesadetrabajo114174-text80 {
-          top: 1829px;
-          left: 181px;
-          color: rgba(13, 0, 189, 1);
-          height: auto;
-          position: absolute;
-          font-size: 32px;
-          align-self: auto;
-          font-style: normal;
-          text-align: center;
-          font-family: Kanit;
-          font-weight: 500px;
-          line-height: 38px;
-          font-stretch: normal;
-          text-decoration: none;
-        }
-        .mesadetrabajo114174-text86 {
-          top: 2231px;
-          left: 259px;
-          color: rgba(255, 255, 255, 1);
-          height: auto;
-          position: absolute;
-          font-size: 25px;
-          align-self: auto;
-          font-style: normal;
-          text-align: center;
-          font-family: Kanit;
-          font-weight: 600px;
-          line-height: 28px;
-          font-stretch: normal;
-          text-decoration: none;
-        }
+  <body style="box-sizing: border-box;border-width: 0;border-style: solid;margin: 0;font-weight: 400;font-style: normal;text-decoration: none;text-transform: none;letter-spacing: normal;line-height: 1.15;color: var(--dl-color-gray-black);background-color: var(--dl-color-gray-white);">
+    <div style="box-sizing: border-box;border-width: 0;border-style: solid;margin: 0;padding: 0;">
+      
 
-      </style>
-
-      <div class="mesadetrabajo114174-container">
-        <div class="mesadetrabajo114174-mesadetrabajo114174">
-          <img
-            alt="Vector4176"
-            src="https://raw.githubusercontent.com/emma-bhv/images-2/11c6d4532e8868bf0839d255c8014005e18607f1/Vector4176.svg"
-            class="mesadetrabajo114174-svg"
-          />
-          <div class="mesadetrabajo114174-grupo24177">
-            <div class="mesadetrabajo114174-grupo14178">
-             <img src="https://raw.githubusercontent.com/emma-bhv/images-2/main/v4_179.png" alt="Rectngulo14179" class="mesadetrabajo114174-image">
+      <div class="mesadetrabajo114174-container" style="box-sizing: border-box;border-width: 0;border-style: solid;margin: 0;padding: 0;min-height: 100vh;display: flex;align-items: center;justify-content: center;background-color: #e5e5e5;">
+        <div class="mesadetrabajo114174-mesadetrabajo114174" style="box-sizing: border-box;border-width: 0;border-style: solid;margin: 0;padding: 0;width: 750px;height: 2829px;display: flex;overflow: hidden;position: relative;max-width: 750px;align-items: flex-start;border-color: transparent;">
+          <img alt="Vector4176" src="https://raw.githubusercontent.com/emma-bhv/images-2/11c6d4532e8868bf0839d255c8014005e18607f1/Vector4176.svg" class="mesadetrabajo114174-svg" style="box-sizing: border-box;border-width: 0;border-style: solid;display: block;left: 0.0029296875px;width: 750;height: 2829;position: absolute;">
+          <div class="mesadetrabajo114174-grupo24177" style="box-sizing: border-box;border-width: 0;border-style: solid;margin: 0;padding: 0;top: -46px;left: -388px;width: 1797px;height: 876.2479858398438px;display: flex;position: absolute;align-items: flex-start;flex-shrink: 1;border-color: transparent;">
+            <div class="mesadetrabajo114174-grupo14178" style="box-sizing: border-box;border-width: 0;border-style: solid;margin: 0;padding: 0;top: 0px;left: 0px;width: 1797px;height: 876.2479858398438px;display: flex;position: absolute;align-items: flex-start;flex-shrink: 1;border-color: transparent;">
+             <img src="https://raw.githubusercontent.com/emma-bhv/images-2/main/v4_179.png" alt="Rectngulo14179" class="mesadetrabajo114174-image" style="box-sizing: border-box;border-width: 0;border-style: solid;display: block;top: 0px;left: 0px;width: 1797px;height: 876px;position: absolute;object-fit: cover;border-color: transparent;">
             </div>
           </div>
-          <img
-            src="https://raw.githubusercontent.com/emma-bhv/images-2/main/Rectngulo54182.png"
-            alt="Rectngulo54182"
-            class="mesadetrabajo114174-image1"
-          />
-          <img
-            alt="Rectngulo44181"
-            src="https://raw.githubusercontent.com/emma-bhv/images-2/11c6d4532e8868bf0839d255c8014005e18607f1/Rectngulo44181.svg"
-            class="mesadetrabajo114174-svg2"
-          />
-          <span class="mesadetrabajo114174-text13">Are you stressed out</span>
-          <img
-            alt="Rectngulo104210"
-            src="https://raw.githubusercontent.com/emma-bhv/images-2/11c6d4532e8868bf0839d255c8014005e18607f1/Rectngulo104210.svg"
-            class="mesadetrabajo114174-svg6"
-          />
-          <span class="mesadetrabajo114174-text11">and lost hope that</span>
-          <img
-            alt="Rectngulo114211"
-            src="https://raw.githubusercontent.com/emma-bhv/images-2/11c6d4532e8868bf0839d255c8014005e18607f1/Rectngulo114211.svg"
-            class="mesadetrabajo114174-svg7"
-          />
-          <span class="mesadetrabajo114174-text12">you can feel better?</span>
+          <img src="https://raw.githubusercontent.com/emma-bhv/images-2/main/Rectngulo54182.png" alt="Rectngulo54182" class="mesadetrabajo114174-image1" style="box-sizing: border-box;border-width: 0;border-style: solid;display: block;top: 23px;left: 212px;width: 326px;height: 109px;position: absolute;object-fit: cover;border-color: transparent;">
+          <img alt="Rectngulo44181" src="https://raw.githubusercontent.com/emma-bhv/images-2/11c6d4532e8868bf0839d255c8014005e18607f1/Rectngulo44181.svg" class="mesadetrabajo114174-svg2" style="box-sizing: border-box;border-width: 0;border-style: solid;display: block;top: 539px;left: 109.5029296875px;width: 531;height: 54;position: absolute;">
+          <span class="mesadetrabajo114174-text13" style="box-sizing: border-box;border-width: 0;border-style: solid;top: 518.80615234375px;left: 119px;color: rgba(255, 255, 255, 1);height: auto;position: absolute;font-size: 55.529998779296875px;align-self: auto;font-style: normal;text-align: left;font-family: Kanit;font-weight: 400px;line-height: normal;font-stretch: normal;text-decoration: none;">Are you stressed out</span>
+          <img alt="Rectngulo104210" src="https://raw.githubusercontent.com/emma-bhv/images-2/11c6d4532e8868bf0839d255c8014005e18607f1/Rectngulo104210.svg" class="mesadetrabajo114174-svg6" style="box-sizing: border-box;border-width: 0;border-style: solid;display: block;top: 596.6708984375px;left: 132px;width: 487;height: 54;position: absolute;">
+          <span class="mesadetrabajo114174-text11" style="box-sizing: border-box;border-width: 0;border-style: solid;top: 576px;left: 149px;color: rgba(255, 255, 255, 1);height: auto;position: absolute;font-size: 55.529998779296875px;align-self: auto;font-style: normal;text-align: left;font-family: Kanit;font-weight: 400px;line-height: normal;font-stretch: normal;text-decoration: none;">and lost hope that</span>
+          <img alt="Rectngulo114211" src="https://raw.githubusercontent.com/emma-bhv/images-2/11c6d4532e8868bf0839d255c8014005e18607f1/Rectngulo114211.svg" class="mesadetrabajo114174-svg7" style="box-sizing: border-box;border-width: 0;border-style: solid;display: block;top: 653.587890625px;left: 110px;width: 531;height: 54;position: absolute;">
+          <span class="mesadetrabajo114174-text12" style="box-sizing: border-box;border-width: 0;border-style: solid;top: 634px;left: 128px;color: rgba(255, 255, 255, 1);height: auto;position: absolute;font-size: 55.529998779296875px;align-self: auto;font-style: normal;text-align: left;font-family: Kanit;font-weight: 400px;line-height: normal;font-stretch: normal;text-decoration: none;">you can feel better?</span>
 
-          <img
-            alt="Rectngulo34180"
-            src="https://raw.githubusercontent.com/emma-bhv/images-2/11c6d4532e8868bf0839d255c8014005e18607f1/Rectngulo34180.svg"
-            class="mesadetrabajo114174-svg1"
-          />
-          <img
-            alt="Rectngulo64183"
-            src="https://raw.githubusercontent.com/emma-bhv/images-2/11c6d4532e8868bf0839d255c8014005e18607f1/Rectngulo64183.svg"
-            class="mesadetrabajo114174-svg3"
-          />
-          <span class="mesadetrabajo114174-text14">
-            <span class="mesadetrabajo114174-text15">
-              <span>[NAME PERSONALIZATION],</span>
-              <br />
-              <span></span>
-              <br />
-              <span>
+          <img alt="Rectngulo34180" src="https://raw.githubusercontent.com/emma-bhv/images-2/11c6d4532e8868bf0839d255c8014005e18607f1/Rectngulo34180.svg" class="mesadetrabajo114174-svg1" style="box-sizing: border-box;border-width: 0;border-style: solid;display: block;top: 829px;left: -0.9970703125px;width: 751;height: 2000;position: absolute;">
+          <img alt="Rectngulo64183" src="https://raw.githubusercontent.com/emma-bhv/images-2/11c6d4532e8868bf0839d255c8014005e18607f1/Rectngulo64183.svg" class="mesadetrabajo114174-svg3" style="box-sizing: border-box;border-width: 0;border-style: solid;display: block;top: 771px;left: 47px;width: 655;height: 1608;position: absolute;">
+          <span class="mesadetrabajo114174-text14" style="box-sizing: border-box;border-width: 0;border-style: solid;top: 839px;left: 124px;color: rgba(0, 0, 0, 1);width: 502px;height: auto;position: absolute;font-size: 24px;align-self: auto;font-style: normal;text-align: left;font-family: Work Sans;font-weight: 400px;line-height: normal;font-stretch: normal;text-decoration: none;">
+            <span class="mesadetrabajo114174-text15" style="box-sizing: border-box;border-width: 0;border-style: solid;color: rgba(0, 0, 0, 1);width: 502px;height: auto;align-self: auto;font-style: normal;text-align: left;font-weight: 400px;font-stretch: normal;text-decoration: none;">
+              <span style="box-sizing: border-box;border-width: 0;border-style: solid;">[NAME PERSONALIZATION],</span>
+              <br style="box-sizing: border-box;border-width: 0;border-style: solid;">
+              <span style="box-sizing: border-box;border-width: 0;border-style: solid;"></span>
+              <br style="box-sizing: border-box;border-width: 0;border-style: solid;">
+              <span style="box-sizing: border-box;border-width: 0;border-style: solid;">
                 Welcome to Care Navigator—a new health and life resource from
                 MyOwnDoctor on behalf of Aetna Better Health of Illinois.
               </span>
-              <br />
-              <span></span>
-              <br />
-              <span>
+              <br style="box-sizing: border-box;border-width: 0;border-style: solid;">
+              <span style="box-sizing: border-box;border-width: 0;border-style: solid;"></span>
+              <br style="box-sizing: border-box;border-width: 0;border-style: solid;">
+              <span style="box-sizing: border-box;border-width: 0;border-style: solid;">
                 We know being healthy means taking care of your whole life. Your
                 Care Navigator is a person you can call when you need to:
               </span>
-              <br />
-              <span></span>
-              <br />
-              <span>• See a doctor online or in person</span>
-              <br />
-              <span>• Get food and rental assistance</span>
-              <br />
-              <span>• Find a job</span>
-              <br />
-              <span>• Get help to lose weight, quit smoking,</span>
-              <br />
-              <span>or eat healthy.</span>
-              <br />
-              <span>• And more.</span>
-              <br />
-              <span></span>
-              <br />
-              <span>
+              <br style="box-sizing: border-box;border-width: 0;border-style: solid;">
+              <span style="box-sizing: border-box;border-width: 0;border-style: solid;"></span>
+              <br style="box-sizing: border-box;border-width: 0;border-style: solid;">
+              <span style="box-sizing: border-box;border-width: 0;border-style: solid;">• See a doctor online or in person</span>
+              <br style="box-sizing: border-box;border-width: 0;border-style: solid;">
+              <span style="box-sizing: border-box;border-width: 0;border-style: solid;">• Get food and rental assistance</span>
+              <br style="box-sizing: border-box;border-width: 0;border-style: solid;">
+              <span style="box-sizing: border-box;border-width: 0;border-style: solid;">• Find a job</span>
+              <br style="box-sizing: border-box;border-width: 0;border-style: solid;">
+              <span style="box-sizing: border-box;border-width: 0;border-style: solid;">• Get help to lose weight, quit smoking,</span>
+              <br style="box-sizing: border-box;border-width: 0;border-style: solid;">
+              <span style="box-sizing: border-box;border-width: 0;border-style: solid;">or eat healthy.</span>
+              <br style="box-sizing: border-box;border-width: 0;border-style: solid;">
+              <span style="box-sizing: border-box;border-width: 0;border-style: solid;">• And more.</span>
+              <br style="box-sizing: border-box;border-width: 0;border-style: solid;">
+              <span style="box-sizing: border-box;border-width: 0;border-style: solid;"></span>
+              <br style="box-sizing: border-box;border-width: 0;border-style: solid;">
+              <span style="box-sizing: border-box;border-width: 0;border-style: solid;">
                 The free MyOwnDoctor app connects you to healthcare 7 days a
                 week.
               </span>
-              <br />
-              <span></span>
-              <br />
-              <span></span>
+              <br style="box-sizing: border-box;border-width: 0;border-style: solid;">
+              <span style="box-sizing: border-box;border-width: 0;border-style: solid;"></span>
+              <br style="box-sizing: border-box;border-width: 0;border-style: solid;">
+              <span style="box-sizing: border-box;border-width: 0;border-style: solid;"></span>
             </span>
-            <span class="mesadetrabajo114174-text47">
-              <span>3 WAYS TO GET STARTED WITH MYOWNDOCTOR:</span>
-              <br />
-              <span></span>
-              <br />
-              <span>1.</span>
+            <span class="mesadetrabajo114174-text47" style="box-sizing: border-box;border-width: 0;border-style: solid;color: rgba(0, 0, 0, 1);width: 502px;height: auto;align-self: auto;font-style: normal;text-align: left;font-weight: 600px;font-stretch: normal;text-decoration: none;">
+              <span style="box-sizing: border-box;border-width: 0;border-style: solid;">3 WAYS TO GET STARTED WITH MYOWNDOCTOR:</span>
+              <br style="box-sizing: border-box;border-width: 0;border-style: solid;">
+              <span style="box-sizing: border-box;border-width: 0;border-style: solid;"></span>
+              <br style="box-sizing: border-box;border-width: 0;border-style: solid;">
+              <span style="box-sizing: border-box;border-width: 0;border-style: solid;">1.</span>
             </span>
-            <span class="mesadetrabajo114174-text53">
-              <span>Call a Care Navigator right now at</span>
-              <br />
-              <span></span>
+            <span class="mesadetrabajo114174-text53" style="box-sizing: border-box;border-width: 0;border-style: solid;color: rgba(0, 0, 0, 1);width: 502px;height: auto;align-self: auto;font-style: normal;text-align: left;font-weight: 400px;font-stretch: normal;text-decoration: none;">
+              <span style="box-sizing: border-box;border-width: 0;border-style: solid;">Call a Care Navigator right now at</span>
+              <br style="box-sizing: border-box;border-width: 0;border-style: solid;">
+              <span style="box-sizing: border-box;border-width: 0;border-style: solid;"></span>
             </span>
-            <span class="mesadetrabajo114174-text57"><a href="tel:+17733951830">773-395-1830</a>.</span>
-            <span class="mesadetrabajo114174-text58"></span>
-            <span class="mesadetrabajo114174-text59">
-              <span>They’ll help you with any needs you have today.</span>
-              <br />
-              <span></span>
+            <span class="mesadetrabajo114174-text57" style="box-sizing: border-box;border-width: 0;border-style: solid;color: rgba(168, 30, 0, 1);width: 502px;height: auto;align-self: auto;font-style: normal;text-align: left;font-weight: 600px;font-stretch: normal;text-decoration: underline;"><a href="tel:+17733951830" style="box-sizing: border-box;border-width: 0;border-style: solid;color: inherit;text-decoration: inherit;">773-395-1830</a>.</span>
+            <span class="mesadetrabajo114174-text58" style="box-sizing: border-box;border-width: 0;border-style: solid;color: rgba(0, 0, 0, 1);width: 502px;height: auto;align-self: auto;font-style: normal;text-align: left;font-weight: 600px;font-stretch: normal;text-decoration: none;"></span>
+            <span class="mesadetrabajo114174-text59" style="box-sizing: border-box;border-width: 0;border-style: solid;color: rgba(0, 0, 0, 1);width: 502px;height: auto;align-self: auto;font-style: normal;text-align: left;font-weight: 400px;font-stretch: normal;text-decoration: none;">
+              <span style="box-sizing: border-box;border-width: 0;border-style: solid;">They’ll help you with any needs you have today.</span>
+              <br style="box-sizing: border-box;border-width: 0;border-style: solid;">
+              <span style="box-sizing: border-box;border-width: 0;border-style: solid;"></span>
             </span>
-            <span class="mesadetrabajo114174-text63">2.</span>
-            <span class="mesadetrabajo114174-text64">
+            <span class="mesadetrabajo114174-text63" style="box-sizing: border-box;border-width: 0;border-style: solid;color: rgba(0, 0, 0, 1);width: 502px;height: auto;align-self: auto;font-style: normal;text-align: left;font-weight: 600px;font-stretch: normal;text-decoration: none;">2.</span>
+            <span class="mesadetrabajo114174-text64" style="box-sizing: border-box;border-width: 0;border-style: solid;color: rgba(0, 0, 0, 1);width: 502px;height: auto;align-self: auto;font-style: normal;text-align: left;font-weight: 400px;font-stretch: normal;text-decoration: none;">
               Download the MyOwnDoctor app and
             </span>
-            <span class="mesadetrabajo114174-text65">
-              <span><a href="https://myowndoctor.com/how-it-works/" target="_blank">Schedule a Virtual Visit.</a></span>
-              <br />
-              <span></span>
+            <span class="mesadetrabajo114174-text65" style="box-sizing: border-box;border-width: 0;border-style: solid;color: rgba(168, 30, 0, 1);width: 502px;height: auto;align-self: auto;font-style: normal;text-align: left;font-weight: 600px;font-stretch: normal;text-decoration: underline;">
+              <span style="box-sizing: border-box;border-width: 0;border-style: solid;"><a href="https://myowndoctor.com/how-it-works/" target="_blank" style="box-sizing: border-box;border-width: 0;border-style: solid;color: inherit;text-decoration: inherit;">Schedule a Virtual Visit.</a></span>
+              <br style="box-sizing: border-box;border-width: 0;border-style: solid;">
+              <span style="box-sizing: border-box;border-width: 0;border-style: solid;"></span>
             </span>
-            <span class="mesadetrabajo114174-text69">3.</span>
-            <span class="mesadetrabajo114174-text70">
-              <span>Learn more.</span>
+            <span class="mesadetrabajo114174-text69" style="box-sizing: border-box;border-width: 0;border-style: solid;color: rgba(0, 0, 0, 1);width: 502px;height: auto;align-self: auto;font-style: normal;text-align: left;font-weight: 600px;font-stretch: normal;text-decoration: none;">3.</span>
+            <span class="mesadetrabajo114174-text70" style="box-sizing: border-box;border-width: 0;border-style: solid;color: rgba(0, 0, 0, 1);width: 502px;height: auto;align-self: auto;font-style: normal;text-align: left;font-weight: 400px;font-stretch: normal;text-decoration: none;">
+              <span style="box-sizing: border-box;border-width: 0;border-style: solid;">Learn more.</span>
             </span>
           </span>
           
-          <span class="mesadetrabajo114174-text80">
-            <span>Take the first step to better</span>
-            <br />
-            <span>health and a better life!</span>
-            <br />
-            <span>Let’s get started today!</span>
+          <span class="mesadetrabajo114174-text80" style="box-sizing: border-box;border-width: 0;border-style: solid;top: 1829px;left: 181px;color: rgba(13, 0, 189, 1);height: auto;position: absolute;font-size: 32px;align-self: auto;font-style: normal;text-align: center;font-family: Kanit;font-weight: 500px;line-height: 38px;font-stretch: normal;text-decoration: none;">
+            <span style="box-sizing: border-box;border-width: 0;border-style: solid;">Take the first step to better</span>
+            <br style="box-sizing: border-box;border-width: 0;border-style: solid;">
+            <span style="box-sizing: border-box;border-width: 0;border-style: solid;">health and a better life!</span>
+            <br style="box-sizing: border-box;border-width: 0;border-style: solid;">
+            <span style="box-sizing: border-box;border-width: 0;border-style: solid;">Let’s get started today!</span>
           </span>
 
-          <a href="tel:+17733951830">
-            <img
-              alt="Rectngulo74186"
-              src="https://raw.githubusercontent.com/emma-bhv/images-2/00d725f5ef50525369c8542d2c6e2cef0d97b99d/Rectngulo74186.svg"
-              class="mesadetrabajo114174-svg4"
-            />
-            <span class="mesadetrabajo114174-text">
-              <span>Call a Care Navigator</span>
-              <br />
-              <span>at 773-395-1830</span>
+          <a href="tel:+17733951830" style="box-sizing: border-box;border-width: 0;border-style: solid;color: inherit;text-decoration: inherit;">
+            <img alt="Rectngulo74186" src="https://raw.githubusercontent.com/emma-bhv/images-2/00d725f5ef50525369c8542d2c6e2cef0d97b99d/Rectngulo74186.svg" class="mesadetrabajo114174-svg4" style="box-sizing: border-box;border-width: 0;border-style: solid;display: block;top: 2012px;left: 169px;width: 412;height: 106;position: absolute;">
+            <span class="mesadetrabajo114174-text" style="box-sizing: border-box;border-width: 0;border-style: solid;top: 2037px;left: 255px;color: rgba(12, 0, 183, 1);height: auto;position: absolute;font-size: 25px;align-self: auto;font-style: normal;text-align: left;font-family: Kanit;font-weight: 600px;line-height: 28px;font-stretch: normal;text-decoration: none;">
+              <span style="box-sizing: border-box;border-width: 0;border-style: solid;">Call a Care Navigator</span>
+              <br style="box-sizing: border-box;border-width: 0;border-style: solid;">
+              <span style="box-sizing: border-box;border-width: 0;border-style: solid;">at 773-395-1830</span>
             </span>
           </a>
 
-          <a href="https://myowndoctor.com/how-it-works/" target="_blank">
-            <img
-              alt="Rectngulo84188"
-              src="https://raw.githubusercontent.com/emma-bhv/images-2/687bed01b8e29538fb8a6259c3044ff335ddec84/Rectngulo84188.svg"
-              class="mesadetrabajo114174-svg5"
-            />
-            <span class="mesadetrabajo114174-text04">
+          <a href="https://myowndoctor.com/how-it-works/" target="_blank" style="box-sizing: border-box;border-width: 0;border-style: solid;color: inherit;text-decoration: inherit;">
+            <img alt="Rectngulo84188" src="https://raw.githubusercontent.com/emma-bhv/images-2/687bed01b8e29538fb8a6259c3044ff335ddec84/Rectngulo84188.svg" class="mesadetrabajo114174-svg5" style="box-sizing: border-box;border-width: 0;border-style: solid;display: block;top: 2138.93505859375px;left: 168px;width: 413;height: 60;position: absolute;">
+            <span class="mesadetrabajo114174-text04" style="box-sizing: border-box;border-width: 0;border-style: solid;top: 2154.658203125px;left: 240.24609375px;color: rgba(255, 255, 255, 1);height: auto;position: absolute;font-size: 25px;align-self: auto;font-style: normal;text-align: left;font-family: Kanit;font-weight: 400px;line-height: normal;font-stretch: normal;text-decoration: none;">
               Schedule a Virtual Visit
             </span>
           </a>
 
-          <a href="https://myowndoctor.com/care-navigator-aetna/" target="_blank">
-            <img
-              alt="Rectngulo124213"
-              src="https://raw.githubusercontent.com/emma-bhv/images-2/00d725f5ef50525369c8542d2c6e2cef0d97b99d/Rectngulo124213.svg"
-              class="mesadetrabajo114174-svg8"
-            />
-            <span class="mesadetrabajo114174-text86">
-              <span>Learn More About</span>
-              <br />
-              <span>MyOwnDoctor</span>
-              <br />
-              <span>and Care Navigators</span>
+          <a href="https://myowndoctor.com/care-navigator-aetna/" target="_blank" style="box-sizing: border-box;border-width: 0;border-style: solid;color: inherit;text-decoration: inherit;">
+            <img alt="Rectngulo124213" src="https://raw.githubusercontent.com/emma-bhv/images-2/00d725f5ef50525369c8542d2c6e2cef0d97b99d/Rectngulo124213.svg" class="mesadetrabajo114174-svg8" style="box-sizing: border-box;border-width: 0;border-style: solid;display: block;top: 2220px;left: 169px;width: 412;height: 106;position: absolute;">
+            <span class="mesadetrabajo114174-text86" style="box-sizing: border-box;border-width: 0;border-style: solid;top: 2231px;left: 259px;color: rgba(255, 255, 255, 1);height: auto;position: absolute;font-size: 25px;align-self: auto;font-style: normal;text-align: center;font-family: Kanit;font-weight: 600px;line-height: 28px;font-stretch: normal;text-decoration: none;">
+              <span style="box-sizing: border-box;border-width: 0;border-style: solid;">Learn More About</span>
+              <br style="box-sizing: border-box;border-width: 0;border-style: solid;">
+              <span style="box-sizing: border-box;border-width: 0;border-style: solid;">MyOwnDoctor</span>
+              <br style="box-sizing: border-box;border-width: 0;border-style: solid;">
+              <span style="box-sizing: border-box;border-width: 0;border-style: solid;">and Care Navigators</span>
             </span>
           </a>
 
-          <span class="mesadetrabajo114174-text10">STAY IN TOUCH</span>
+          <span class="mesadetrabajo114174-text10" style="box-sizing: border-box;border-width: 0;border-style: solid;top: 2413.88671875px;left: 290px;color: rgba(255, 255, 255, 1);height: auto;position: absolute;font-size: 25px;align-self: auto;font-style: normal;text-align: left;font-family: Kanit;font-weight: 500px;line-height: normal;font-stretch: normal;text-decoration: none;">STAY IN TOUCH</span>
 
-          <img
-            src="https://raw.githubusercontent.com/emma-bhv/images-2/00d725f5ef50525369c8542d2c6e2cef0d97b99d/Grupo54195.svg"
-            alt="Grupo54195"
-            class="mesadetrabajo114174-image3"
-          />
+          <img src="https://raw.githubusercontent.com/emma-bhv/images-2/00d725f5ef50525369c8542d2c6e2cef0d97b99d/Grupo54195.svg" alt="Grupo54195" class="mesadetrabajo114174-image3" style="box-sizing: border-box;border-width: 0;border-style: solid;display: block;top: 2477px;left: 181px;width: 389px;height: 93px;position: absolute;object-fit: cover;border-color: transparent;">
 
-          <a href="https://www.facebook.com/myowndoctor/" target="_blank">
-            <img
-              alt="Trazado74209"
-              src="https://raw.githubusercontent.com/emma-bhv/images-2/00d725f5ef50525369c8542d2c6e2cef0d97b99d/Trazado74209.svg"
-              class="mesadetrabajo114174-svg05"
-            />
+          <a href="https://www.facebook.com/myowndoctor/" target="_blank" style="box-sizing: border-box;border-width: 0;border-style: solid;color: inherit;text-decoration: inherit;">
+            <img alt="Trazado74209" src="https://raw.githubusercontent.com/emma-bhv/images-2/00d725f5ef50525369c8542d2c6e2cef0d97b99d/Trazado74209.svg" class="mesadetrabajo114174-svg05" style="box-sizing: border-box;border-width: 0;border-style: solid;display: block;top: 2499.623046875px;left: 212.049072265625px;width: 37;height: 72;position: absolute;">
           </a>
 
-          <a href="https://www.linkedin.com/company/myowndoc-or/" target="_blank">
+          <a href="https://www.linkedin.com/company/myowndoc-or/" target="_blank" style="box-sizing: border-box;border-width: 0;border-style: solid;color: inherit;text-decoration: inherit;">
 
-            <img
-              src="https://raw.githubusercontent.com/emma-bhv/images-2/00d725f5ef50525369c8542d2c6e2cef0d97b99d/Grupo64201.svg"
-              alt="Grupo64201"
-              class="mesadetrabajo114174-image4"
-            />
+            <img src="https://raw.githubusercontent.com/emma-bhv/images-2/00d725f5ef50525369c8542d2c6e2cef0d97b99d/Grupo64201.svg" alt="Grupo64201" class="mesadetrabajo114174-image4" style="box-sizing: border-box;border-width: 0;border-style: solid;display: block;top: 2503.47998046875px;left: 356.02392578125px;width: 39px;height: 39px;position: absolute;object-fit: cover;border-color: transparent;">
           </a>
 
-          <a href="https://twitter.com/myowndoctor" target="_blank">
-            <img
-              src="https://raw.githubusercontent.com/emma-bhv/images-2/00d725f5ef50525369c8542d2c6e2cef0d97b99d/Grupo74206.svg"
-              alt="Grupo74206"
-              class="mesadetrabajo114174-image5"
-            />
+          <a href="https://twitter.com/myowndoctor" target="_blank" style="box-sizing: border-box;border-width: 0;border-style: solid;color: inherit;text-decoration: inherit;">
+            <img src="https://raw.githubusercontent.com/emma-bhv/images-2/00d725f5ef50525369c8542d2c6e2cef0d97b99d/Grupo74206.svg" alt="Grupo74206" class="mesadetrabajo114174-image5" style="box-sizing: border-box;border-width: 0;border-style: solid;display: block;top: 2501.806640625px;left: 497.734130859375px;width: 55px;height: 45px;position: absolute;object-fit: cover;border-color: transparent;">
           </a>
 
-          <span class="mesadetrabajo114174-text05">
-            <span>MyOwnDoctor</span>
-            <br />
-            <span>223 West Erie Street, Suite 4E, Chicago IL 60654</span>
+          <span class="mesadetrabajo114174-text05" style="box-sizing: border-box;border-width: 0;border-style: solid;top: 2612.6220703125px;left: 110px;color: rgba(255, 255, 255, 1);height: auto;position: absolute;font-size: 25px;align-self: auto;font-style: normal;text-align: center;font-family: Kanit;font-weight: 500px;line-height: normal;font-stretch: normal;text-decoration: none;">
+            <span style="box-sizing: border-box;border-width: 0;border-style: solid;">MyOwnDoctor</span>
+            <br style="box-sizing: border-box;border-width: 0;border-style: solid;">
+            <span style="box-sizing: border-box;border-width: 0;border-style: solid;">223 West Erie Street, Suite 4E, Chicago IL 60654</span>
           </span>
 
-          <span class="mesadetrabajo114174-text09">
+          <span class="mesadetrabajo114174-text09" style="box-sizing: border-box;border-width: 0;border-style: solid;top: 2711.677734375px;left: 140px;color: rgba(255, 255, 255, 1);height: auto;position: absolute;font-size: 25px;align-self: auto;font-style: normal;text-align: left;font-family: Kanit;font-weight: 400px;line-height: normal;font-stretch: normal;text-decoration: none;">
             Unsubscribe to emails from MyOwnDoctor
           </span>
         </div>
